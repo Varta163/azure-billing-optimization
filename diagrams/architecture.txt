@@ -1,0 +1,10 @@
+ARCHITECTURE DIAGRAM
+---------------------
+User/API Request
+      |
+      v
+Azure Function Proxy
+      |
+      |----> Cosmos DB (recent data, < 90 days)
+      |
+      |----> Azure Blob Storage (archived data, > 90 days via Timer Trigger)
